@@ -25,7 +25,7 @@ html<!DOCTYPE html>
         header p { opacity: 0.9; font-size: 1.1rem; margin-top: 5px; font-weight: 300; }
         .container { width: 92%; max-width: 1100px; margin: auto; padding: 30px 0; }
         .hero { background: var(--white); padding: 40px; border-radius: 12px; text-align: center; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.02); border-left: 5px solid var(--accent-color); }
-        h2 { color: var(--primary-color); margin-top: 20px; margin-bottom: 20px; font-size: 1.6rem; border-bottom: 2px solid var(--secondary-color); padding-bottom: 8px; }
+        h2 { color: var(--primary-color); margin-top: 25px; margin-bottom: 20px; font-size: 1.6rem; border-bottom: 2px solid var(--secondary-color); padding-bottom: 8px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 30px; }
         .card { background: var(--white); padding: 25px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.03); border: 1px solid rgba(15, 76, 92, 0.06); }
         .card h3 { color: var(--primary-color); margin-bottom: 15px; }
@@ -76,7 +76,7 @@ html<!DOCTYPE html>
             <p>Providing advanced craniofacial and dental treatment solutions with cutting-edge medical technologies in Benin City.</p>
         </section>
 
-        <!-- Information Grid -->
+        <!-- Information & Booking Options Grid -->
         <div class="grid">
             <div class="card">
                 <h3>Our Locations</h3>
@@ -87,48 +87,61 @@ html<!DOCTYPE html>
                 <h3>Booking Options</h3>
                 <p>📅 <strong>Online Booking:</strong> ₦3,000</p>
                 <p>🏥 <strong>In-Clinic Booking:</strong> ₦5,000</p>
-                <p style="margin-top: 12px; font-size: 0.85rem; color: #666;">*Fill out the booking form below to send your request instantly to our clinical team on WhatsApp.</p>
+                <p style="margin-top: 12px; font-size: 0.85rem; color: #666;">*Please use the interactive booking engine directly below to secure an appointment date.</p>
             </div>
         </div>
 
-        <!-- Gallery Section -->
+        <!-- Appointment Booking Form (Positioned directly under booking options) -->
         <section>
-            <h2>Hospital & Procedure Gallery</h2>
-            <div class="gallery-filters">
-                <button class="filter-btn active" onclick="filterGallery('all')">Show All</button>
-                <button class="filter-btn" onclick="filterGallery('procedure')">Procedures</button>
-                <button class="filter-btn" onclick="filterGallery('clinic')">Our Clinic</button>
-            </div>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item procedure"><img src="braces.jpg" alt="Braces"><div class="gallery-caption">Orthodontic Braces</div></div>
-                <div class="gallery-item procedure"><img src="braces2.jpg" alt="Braces II"><div class="gallery-caption">Orthodontic Braces II</div></div>
-                <div class="gallery-item procedure"><img src="bridge.jpg" alt="Bridge"><div class="gallery-caption">Dental Bridge Case 1</div></div>
-                <div class="gallery-item procedure"><img src="bridge2.jpg" alt="Bridge II"><div class="gallery-caption">Dental Bridge Case 2</div></div>
-                <div class="gallery-item procedure"><img src="composite.jpg" alt="Composite"><div class="gallery-caption">Composite Filling</div></div>
-                <div class="gallery-item procedure"><img src="pfm.jpg" alt="PFM"><div class="gallery-caption">PFM Crown Case 1</div></div>
-                <div class="gallery-item procedure"><img src="pfm2.jpg" alt="PFM II"><div class="gallery-caption">PFM Crown Case 2</div></div>
-                <div class="gallery-item procedure"><img src="zirconia.jpg" alt="Zirconia"><div class="gallery-caption">Zirconia Crown</div></div>
-                <div class="gallery-item procedure"><img src="rct.jpg" alt="RCT"><div class="gallery-caption">Root Canal Care</div></div>
-                <div class="gallery-item procedure"><img src="scaling.jpg" alt="Scaling"><div class="gallery-caption">Scaling & Polishing</div></div>
-                <div class="gallery-item procedure"><img src="wisdom.jpg" alt="Wisdom"><div class="gallery-caption">Wisdom Tooth Care</div></div>
-                <div class="gallery-item procedure"><img src="whitening.jpg" alt="Whitening"><div class="gallery-caption">Teeth Whitening</div></div>
-                <div class="gallery-item clinic"><img src="interior.jpg" alt="Interior"><div class="gallery-caption">Clinic Interior</div></div>
-                <div class="gallery-item clinic"><img src="interior2.jpg" alt="Interior II"><div class="gallery-caption">Treatment Room</div></div>
-                <div class="gallery-item clinic"><img src="exterior.jpg" alt="Exterior"><div class="gallery-caption">Clinic Exterior</div></div>
-                <div class="gallery-item clinic"><img src="sterilizer.jpg" alt="Sterilizer"><div class="gallery-caption">Sterilization Unit</div></div>
-                <div class="gallery-item clinic"><img src="x-ray.jpg" alt="X-Ray"><div class="gallery-caption">X-Ray Setup</div></div>
-            </div>
-        </section>
+            <h2>Book an Appointment</h2>
+            <form id="appointmentForm" onsubmit="handleFormSubmit(event)">
+                <div class="grid" style="margin-bottom: 0;">
+                    <div class="form-group">
+                        <label for="fullName">Patient Full Name</label>
+                        <input type="text" id="fullName" required placeholder="e.g. Osasuyi Emmanuel">
+                    </div>
+                    <div class="form-group">
+                        <label for="whatsappNumber">Patient WhatsApp Number</label>
+                        <input type="tel" id="whatsappNumber" required placeholder="e.g. 08012345678">
+                    </div>
+                </div>
 
-        <!-- Treatments & Pricing Table -->
-        <section>
-            <h2>Our Corporate Dental Treatments & Pricing</h2>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Treatment Service</th>
-                            <th>Price (NGN)</th>
-                        </tr>
-                    </thead>
+                <div class="grid" style="margin-bottom: 0;">
+                    <div class="form-group">
+                        <label for="location">Preferred Clinic Location</label>
+                        <select id="location" required>
+                            <option value="29 Murtala Muhammad Way (Opp. MTN)">29 Murtala Muhammad Way (Opp. MTN)</option>
+                            <option value="127 Uselu (Success Pharmacy)">127 Uselu (Success Pharmacy)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookingType">Booking Type</label>
+                        <select id="bookingType" onchange="calculateTotal()" required>
+                            <option value="3000">Online Booking (₦3,000)</option>
+                            <option value="5000">In-Clinic Registration (₦5,000)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid" style="margin-bottom: 0;">
+                    <div class="form-group">
+                        <label for="appointmentDate">Preferred Date</label>
+                        <input type="date" id="appointmentDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="appointmentTime">Preferred Time</label>
+                        <input type="time" id="appointmentTime" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="treatmentDropdown">Select Treatment Needed</label>
+                    <select id="treatmentDropdown" onchange="calculateTotal()" required>
+                        <option value="0" data-name="Consultation / General Checkup">Consultation / General Checkup (₦0 added)</option>
+                        <option value="20000" data-name="Dental Cleaning">Dental Cleaning (₦20,000)</option>
+                        <option value="20000" data-name="Curettage">Curettage (₦20,000)</option>
+                        <option value="25000" data-name="Mouth Odour Treatment">Mouth Odour Treatment (₦25,000)</option>
+                        <option value="20000" data-name="GIC Filling">GIC Filling (₦20,000)</option>
+                        <option value="20000" data-name="Composite Filling">Composite Filling (₦20,000)</option>
+                        <option value="20000" data-name="Amalgam Filling">Amalgam Filling (₦20,000)</option>
+                        <option value="45000" data-name="Root Canal (Front)">Root Canal (Front) (₦45,000)</option>
