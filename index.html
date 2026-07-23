@@ -64,16 +64,17 @@ html<!DOCTYPE html>
         }
         .filter-btn.active, .filter-btn:hover { background: var(--primary-color); color: var(--white); border-color: var(--primary-color); }
         
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; margin-bottom: 40px; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; margin-bottom: 40px; }
         .gallery-item { 
             background: var(--white); border-radius: 8px; overflow: hidden; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.04); border: 1px solid rgba(15, 76, 92, 0.06);
             transition: transform 0.3s ease;
         }
         .gallery-item:hover { transform: translateY(-5px); }
-        .gallery-item img { width: 100%; height: 180px; object-fit: cover; display: block; background: #e9ecef; }
-        .gallery-caption { padding: 12px; text-align: center; font-size: 0.9rem; font-weight: 600; color: var(--dark-text); background: var(--white); }
+        .gallery-item img { width: 100%; height: 160px; object-fit: cover; display: block; background: #e9ecef; }
+        .gallery-caption { padding: 10px; text-align: center; font-size: 0.85rem; font-weight: 600; color: var(--dark-text); background: var(--white); }
         
+        /* Table Styles */
         .table-container { 
             background: var(--white); border-radius: 12px; overflow: hidden; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.03); margin-bottom: 40px; border: 1px solid rgba(15, 76, 92, 0.06);
@@ -88,6 +89,7 @@ html<!DOCTYPE html>
         form { 
             background: var(--white); padding: 35px; border-radius: 12px; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.04); border: 1px solid rgba(15, 76, 92, 0.06);
+            margin-top: 20px;
         }
         .form-group { margin-bottom: 20px; }
         label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--primary-color); }
@@ -157,7 +159,7 @@ html<!DOCTYPE html>
                 <h3>Booking Options</h3>
                 <p>📅 <strong>Online Booking:</strong> ₦3,000</p>
                 <p>🏥 <strong>In-Clinic Booking:</strong> ₦5,000</p>
-                <p style="margin-top: 12px; font-size: 0.85rem; color: #666; font-style: italic;">*Select details below to generate your direct appointment message for WhatsApp.</p>
+                <p style="margin-top: 12px; font-size: 0.85rem; color: #666; font-style: italic;">*Select details in the booking section below. Final summary submits directly to WhatsApp.</p>
             </div>
         </div>
 
@@ -172,27 +174,11 @@ html<!DOCTYPE html>
             
             <div class="gallery-grid">
                 <!-- Procedure Pictures -->
-                <div class="gallery-item procedure">
-                    <img src="braces.jpg" alt="Braces treatment">
-                    <div class="gallery-caption">Orthodontic Braces</div>
-                </div>
-                <div class="gallery-item procedure">
-                    <img src="braces2.jpg" alt="Braces treatment follow up">
-                    <div class="gallery-caption">Orthodontic Braces II</div>
-                </div>
-                <div class="gallery-item procedure">
-                    <img src="bridge.jpg" alt="Dental Bridge">
-                    <div class="gallery-caption">Dental Bridge Case 1</div>
-                </div>
-                <div class="gallery-item procedure">
-                    <img src="bridge2.jpg" alt="Dental Bridge outcome">
-                    <div class="gallery-caption">Dental Bridge Case 2</div>
-                </div>
-                <div class="gallery-item procedure">
-                    <img src="composite.jpg" alt="Composite Filling">
-                    <div class="gallery-caption">Composite Filling</div>
-                </div>
-                <div class="gallery-item procedure">
-                    <img src="pfm.jpg" alt="PFM Crown">
-                    <div class="gallery-caption">PFM Crown Case 1</div>
-                </div>
+                <div class="gallery-item procedure"><img src="braces.jpg" alt="Braces"><div class="gallery-caption">Orthodontic Braces</div></div>
+                <div class="gallery-item procedure"><img src="braces2.jpg" alt="Braces II"><div class="gallery-caption">Orthodontic Braces II</div></div>
+                <div class="gallery-item procedure"><img src="bridge.jpg" alt="Bridge"><div class="gallery-caption">Dental Bridge Case 1</div></div>
+                <div class="gallery-item procedure"><img src="bridge2.jpg" alt="Bridge II"><div class="gallery-caption">Dental Bridge Case 2</div></div>
+                <div class="gallery-item procedure"><img src="composite.jpg" alt="Composite"><div class="gallery-caption">Composite Filling</div></div>
+                <div class="gallery-item procedure"><img src="pfm.jpg" alt="PFM"><div class="gallery-caption">PFM Crown Case 1</div></div>
+                <div class="gallery-item procedure"><img src="pfm2.jpg" alt="PFM II"><div class="gallery-caption">PFM Crown Case 2</div></div>
+                <div class="gallery-item procedure"><img src="zirconia.jpg" alt="Zirconia"><div class="gallery-caption">Zirconia Premium Crown</div></div>
